@@ -1,0 +1,111 @@
+Alt + P         history command
+Pothole_case
+call stack: the stack of frames for functions currently being executed
+Variable        REFER to VALUE
+Logical         operator: not / and /or
+str(x)          convert x to string
+str(int(str * 5))
+dir(math)       return all the build-in functions of math
+help(function)
+to access a function that has been imported, use module_name.function.name
+
+if():
+elif():
+else():
+
+return (num % 2 == 0)
+
+value from INPUT is string
+
+str operator
+    in
+    len("str")
+    str[start_index:end_index]
+        the substring begins with the character at index start and goes up
+        to but not included the character at index end
+        e.g. str[0:4] return string from the first character to the third
+        character, the forth one is not included
+    word[:2]   # character from the beginning to position 2 (excluded)
+    word[-2:]  # characters from the second-last (included) to the end
+    strings are immutable, they cannot be changed
+    +---+---+---+---+---+---+
+    | P | y | t | h | o | n |
+    +---+---+---+---+---+---+
+     0   1   2   3   4   5   6
+    -6  -5  -4  -3  -2  -1
+    str.find('str')
+    str.count('str')
+    str.capitalize
+    str.lstrip()
+    str.rstrip()
+    str.strip()
+    str.lower()
+    str.isupper()
+    str.isalnum()
+    str.isdigit()
+
+list[]
+    x in list[]
+    len(list)
+    min(list)
+    max(list)
+    sum(list) list must be numeric
+    list.append()
+    list.extend() append the items in the list parameter to the list
+    list.pop()
+
+range(10) generate a sequence of numbers from 0 to 9
+parallel list
+
+tuple tup = ('a',3,-0.2)
+    is immutable
+    grades = [['A1',80],['A2',70],['A3',90]]
+
+dictionary
+    dictionaries are mutable
+    dictionaries are unordered
+    key pair / key is unique in a dictionary
+    asn_to_grade = {'A1':80,'A2':70,'A3':90}
+    'A1' is key, the item on the left-hand side
+    80 is value, the item on the right-hand side
+    operator
+        in / find key in a dictionary
+        len(dic) return the number of KEY-VALUE pairs in dictionary
+        asn_to_grade['A4'] = 85 // add new key to dictionary
+        del asn_to_grade['A4'] //delete key 'A4'
+        for key in asn_to_grade
+            print(key,asn_to_grade[key])
+
+        colour_to_fruit = {}
+        for fruit in fruit_to_colour:
+            # What colour is the fruit?
+            colour = fruit_to_colour[fruit]
+            if not (colour in colour_to_fruit):
+                colour_to_fruit[colour] = [fruit]
+            else:
+                colour_to_fruit[colour].append(fruit)
+
+def readfile(file):
+    write file record and convert to dictionary
+    line = gradefile.readline()
+    while line != '\n':
+        line = gradefile.readline()
+
+    grade_to_ids = {}
+    line = gradefile.readline()
+
+    while line != '':
+        student_id = line[:4]
+        grade = float (line[4:].strip())
+
+        if grade not in grade_to_ids:
+            grade_to_ids[grade] = [student_id]
+        else:
+            grade_to_ids[grade].append(student_id)
+
+        line = gradefile.readline()
+
+    return grade_to_ids
+
+file = open('path')
+readfile(file) #return a dictionary
