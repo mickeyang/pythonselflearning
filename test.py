@@ -1,4 +1,6 @@
-text = 'abccsdxxvcfd'
+#compare two string to see whether one string exsits in another
+
+text = 'abccsdcfd'
 find = 'sd'
 i = 0
 k = 1
