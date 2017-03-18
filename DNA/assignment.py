@@ -56,9 +56,8 @@ def is_valid_sequence(dna):
     >>>is_valid_sequence('ACDGCS')
     False
     '''
-    if(len(dna) == 0):
+    if(len(dna) == 1):
         return(dna in 'ATCG')
-
     for i in range(len(dna)-1):
         if(dna[i] not in 'ATCG'):
             return False
@@ -89,10 +88,12 @@ def get_complement(dna):
     }.get(dna)
 
 def get_complementary_sequence(dna):
-    if(len(dna) > 1):
+    if(len(dna) > 0):
         new_sequence = ''
         for i in range(len(dna)):
             new_sequence += get_complement(dna[i])
         return new_sequence
+    elif (len(dna) == 0):
+        return None
     else:
         return get_complement(dna)
