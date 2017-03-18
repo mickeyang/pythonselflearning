@@ -1,3 +1,3 @@
 import assignment as a
 
-print(a.insert_sequence('CCGG','AT',3))
+print(a.is_valid_sequence('AaA'))

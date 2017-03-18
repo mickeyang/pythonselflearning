@@ -19,7 +19,7 @@ def is_longer(dna1, dna2):
     >>> is_longer('ATCG', 'ATCGGA')
     False
     """
-    if(len(dna1) > 0 and len(dna2) > 0):
+    if(len(dna1) >= 0 and len(dna2) >= 0):
         return(len(dna1) > len(dna2))
     return False
 
@@ -56,6 +56,9 @@ def is_valid_sequence(dna):
     >>>is_valid_sequence('ACDGCS')
     False
     '''
+    if(len(dna) == 0):
+        return(dna in 'ATCG')
+
     for i in range(len(dna)-1):
         if(dna[i] not in 'ATCG'):
             return False
@@ -76,3 +79,20 @@ def insert_sequence(dna1,dna2,index):
         return new_dna
     else:
         return None
+
+def get_complement(dna):
+    return {
+        'A': 'T',
+        'T': 'A',
+        'C': 'G',
+        'G': 'C',
+    }.get(dna)
+
+def get_complementary_sequence(dna):
+    if(len(dna) > 1):
+        new_sequence = ''
+        for i in range(len(dna)):
+            new_sequence += get_complement(dna[i])
+        return new_sequence
+    else:
+        return get_complement(dna)

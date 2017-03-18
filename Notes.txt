@@ -113,5 +113,11 @@ readfile(file) #return a dictionary
 -----------------------------------------------------------------------
 import sys
 sys.path.insert(0, '/path/to/application/app/folder')
-
 import file
+
+There is no switch in Python, use dictionary instead. For example:
+    def f(x):
+    return {
+        'a': 1,
+        'b': 2,
+    }.get(x, 9)  # 9 is default if x not found
