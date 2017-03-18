@@ -47,3 +47,32 @@ def contains_sequence(dna1, dna2):
     if(len(dna1) > 0 and len(dna2) > 0):
         return(dna1.count(dna2) > 0)
     return False
+
+def is_valid_sequence(dna):
+    '''(str) -> bool
+    return true if and only if A T C G
+    >>>is_valid_sequence('AAA')
+    True
+    >>>is_valid_sequence('ACDGCS')
+    False
+    '''
+    for i in range(len(dna)-1):
+        if(dna[i] not in 'ATCG'):
+            return False
+            break
+    return True
+
+def insert_sequence(dna1,dna2,index):
+    '''(str,str,int) -> str
+    construct a new string
+    >>>insert_sequence('CCGG','AT',2)
+    CCATGG
+    '''
+    new_dna = ''
+    if(index >=0 and index <= len(dna1)):
+        new_dna += dna1[0:index]
+        new_dna += dna2
+        new_dna += dna1[index:]
+        return new_dna
+    else:
+        return None
