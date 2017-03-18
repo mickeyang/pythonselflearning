@@ -109,3 +109,9 @@ def readfile(file):
 
 file = open('path')
 readfile(file) #return a dictionary
+
+-----------------------------------------------------------------------
+import sys
+sys.path.insert(0, '/path/to/application/app/folder')
+
+import file
