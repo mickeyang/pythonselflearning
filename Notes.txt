@@ -121,3 +121,48 @@ There is no switch in Python, use dictionary instead. For example:
         'a': 1,
         'b': 2,
     }.get(x, 9)  # 9 is default if x not found
+-----------------------------------------------------------------------
+To READ a file
+    1.open(filename,mode)
+        mode
+        'r'  to open for reading
+        'w'  to open for writing / erasing what is already in the file
+        'a'  to open for appending / adding to what is already in the file
+    2.read file - 4 modes
+        readline()
+            ignore the header
+            read and return the next line from the file, including
+            the newline character
+            return the empty string is there are no more lines in the file
+
+        read every line of a file
+            for line in file:
+                print(line,end = '')
+
+        read the whole file at once, transfer into string
+            file.read()
+
+        read everyline of a file and transfer to list[]
+            file.readlines()
+
+        print(line,end = '')
+        print has an optional parameter that specifies the string to print as the end marker
+    3.close()
+-----------------------------------------------------------------------
+To WRITE a file
+import tkinter.filedialog
+from_filename = tkinter.filedialog.askopenfilename() // ask to open a file
+to_filename = tkinter.filedialog.asksavefilename() //specify a file to save
+
+#open file and read all contents,put them into memory
+from_file = open(from_filename,'r')
+contents = from_file.read()
+from_file.close()
+#write contents to a new file
+to_file = open(to_filename,'w')
+to_file.write('Copy\n')
+to_file.write(contents)
+to_file.close()
+
+write method does not append any newlines automatically
+-----------------------------------------------------------------------
